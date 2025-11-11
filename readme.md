@@ -6,7 +6,7 @@ Inspired by [Mayo Clinic](https://www.mayoclinic.org/), this project showcases h
 ---
 
 ## 🌐 Live Demo
-[👉 View Website]([(http://kshospital.com/)])  
+[👉 View Website](([https://sol4kira.github.io/ks-hospital/]))  
 
 ---
 
@@ -69,7 +69,7 @@ it was taken from youtube uc san diego health
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/ks-hospital.git
+   git clone (https://github.com/sol4kira/ks-hospital.git)
 
 
 📬 Contact & About
@@ -85,3 +85,4 @@ it was taken from youtube uc san diego health
 
 
 This project is open-source under the MIT License — you’re free to use, modify, and share it.
+
