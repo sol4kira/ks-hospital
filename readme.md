@@ -6,8 +6,7 @@ Inspired by [Mayo Clinic](https://www.mayoclinic.org/), this project showcases h
 ---
 
 ## 🌐 Live Demo
-[👉 View Website](https://yourusername.github.io/ks-hospital/)  
-*(Replace with your actual GitHub Pages link once deployed)*
+[👉 View Website]([(http://kshospital.com/)])  
 
 ---
 
@@ -37,10 +36,11 @@ ks-hospital/
 │ ├── nurse.jfif
 │ ├── room.jfif
 │ └── more...
-├── videos/
-│ └── tour.mp4
 └── README.md
 
+#video on the web
+[hospital tour]([https://www.mayoclinic.org/](https://drive.google.com/file/d/1x7VuQ7-kSXc6jJjaf2M6juPt39R3bRRF/view?usp=drive_link)
+it was taken from youtube uc san diego health 
 
 ---
 
@@ -82,5 +82,6 @@ ks-hospital/
 🌍 GitHub: [sol4kira](https://github.com/sol4kira)
 
 🪪 License
+
 
 This project is open-source under the MIT License — you’re free to use, modify, and share it.
