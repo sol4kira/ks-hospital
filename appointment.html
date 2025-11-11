@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleschat.css">
+    <title>appointment</title>
+</head>
+<body>
+    <header class="header">
+        <img src="images/ks hospital logo.png" alt="ks hospital logo" class="logo">
+        <p class=" welcome">Welcome To the world's best Hospital.</p>
+        <nav>
+            <a href="add new patient.html">Add New Patient</a>
+            <a href="view patients.html">View Patient</a>
+            <a href="view appointments.html">View Appointment</a>
+            <a href="add new appointment.html">New Appointment</a>
+            <a href="aboutus.html">About Us</a>
+        </nav>
+    </header>
+
+    <main class="main_form">
+        <h2>Book Appointment</h2>
+        <form action="#" method="post" class="appointment_form">
+
+            <label for="name">Patient Name:</label>
+            <input type="text" name="patient_name" id="name" required placeholder="Abebe Kebede" class="input" >
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="patientemail" id="email" required placeholder="example@gmail.com" class="input" >
+            <br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" name="patient_phone" id="phone" required placeholder="+251 9XXXXXXXX" class="input">
+            <br> 
+
+            <label for="doctor">Which Doctor do you want to visit</label>
+            <select name="doctor" id="doctor" required class="input">
+                <option value="" disabled selected>Select a doctor</option>
+                <option value="dr_smith">Dr. John Smith - Cardiologist</option>
+                <option value="dr_jones">Dr. Emily Jones - Dermatologist</option>
+                <option value="dr_brown">Dr. Michael Brown - Neurologist</option>
+                <option value="dr_davis">Dr. Sarah Davis - Pediatrician</option>
+                <option value="dr_miller">Dr. David Miller - General Practitioner</option>
+            </select>
+            <br>
+
+            <label for="date" >Appointment Date:</label>
+            <input type="date" name="appointment_date" id="date" required class="input" >
+            <br>
+
+            <label for="time">Appointment Time:</label>
+            <input type="time" name="appointment_time" id="time" required class="input time" >
+            <br>
+
+            <label for="reason">Reason Of Appointment:</label>
+            <textarea name="reason" id="reason" rows="4" required placeholder="Describe the reason for your appointment..." class="input"></textarea>
+            <br>
+
+            <input type="submit" value="Book Appointment" class="submit_button" id="submitbtn">
+            <p id="error" class="error">Appointment error</p>
+            <p id="success" class="success">Appointment was success full you will receive an email with a confirmation</p>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
