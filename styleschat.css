@@ -296,5 +296,71 @@ body {
 }
 
 
+/*this is for the appointment page only*/
 
+.main_form {
+  width: 700px;
+  height: 780px;
+  margin: 50px auto;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  color: #000;
+  gap:15px;
+}
 
+.main_form label{
+  font-weight: 16px;
+}
+
+.input{
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submit_button{
+  background-color:rgba(182, 241, 180, 0.466);
+  width: 150px;
+  margin-top:20px;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  margin-left:250px;
+  cursor:pointer;
+}
+
+.time{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.error{
+  color:red;
+  display:none;
+  text-align:center;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+.success{
+  color:green;
+  display:none;
+  text-align:center;
+  font-weight:bold;
+  margin-top:15px;
+}
