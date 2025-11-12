@@ -1,5 +1,6 @@
 const submitbtn = document.getElementById('submitbtn');
 
+
 const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('phone');
 const doctorSelect = document.getElementById('doctor');
@@ -10,8 +11,6 @@ const nameInput = document.getElementById('name');
 
 function cutWhiteSpace(text){return(text ||'').trim();}
 
-
-const doctor= doctorSelect.value;
 
 function isValidDate(dateString) {
     console.log('=== DATE VALIDATION DEBUG ===');
@@ -127,6 +126,7 @@ submitbtn.addEventListener('click', function(event) {
     const verifyphone = cutWhiteSpace(phoneInput.value);
     const verifiedDate = dateInput.value;
     const verifiedTime = timeInput.value;
+    const doctor= doctorSelect.value;
     
     // Validate each field
     const errors = [];
@@ -149,5 +149,33 @@ submitbtn.addEventListener('click', function(event) {
     } else {
         document.getElementById('error').style.display = 'none';
         document.getElementById('success').style.display = 'block';
+
+        //collect the data
+        const appointmentinfo={
+            name:verifyname,
+            email:verifyemail,
+            phone:verifyphone,
+            date:verifiedDate,
+            time:verifiedTime,
+            doctor:doctor,
+            reason:reasonInput.value
+        }
+        //send to backend nodejs
+        fetch('http://localhost:3000/send', {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(appointmentinfo)
+        })
+        .then(res =>res.json())
+        .then(data =>{
+            console.log('Server response:', data);
+            alert('Appointment booked successfully! A confirmation email has been sent.');
+        })
+        .catch(err =>{
+            console.error('Error sending appointment data:', err);
+            alert('Failed to book appointment. Please try again later.');
+        });
     }
 });
+
+
