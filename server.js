@@ -3,6 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const SibApiV3Sdk = require('@getbrevo/brevo');
+const fs =require('fs');
+const path = require('path');
+const filepath = path.join(__dirname,'appointment.json');
 
 const app = express();
 app.use(cors());
@@ -11,6 +14,21 @@ app.use(bodyParser.json());
 // Configure Brevo client
 const brevo = new SibApiV3Sdk.TransactionalEmailsApi();
 brevo.setApiKey(SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
+
+function saveAppointment(newappointment){
+    let data = [];
+
+    if(fs.existsSync(filepath)){
+        try{
+            data = JSON.parse(fs.readFileSync(filepath,'utf8'));
+        }catch(error){
+            console.error('Error reading existing data:', error);
+        }
+    }
+    data.push(newappointment);
+    fs.writeFileSync(filepath,JSON.stringify(data, null,2));
+}
+
 
 app.post('/send', async (req, res) => {
   const { name, email, phone, date, time, doctor, reason } = req.body;
@@ -40,6 +58,8 @@ app.post('/send', async (req, res) => {
 
   try {
     await brevo.sendTransacEmail(sendSmtpEmail);
+    saveAppointment({ name, email, phone, doctor, date, time, reason });
+    console.log('Appointment saved to JSON file.');
     console.log('Email sent successfully!');
     res.json({ message: 'Email sent successfully!' });
   } catch (error) {
